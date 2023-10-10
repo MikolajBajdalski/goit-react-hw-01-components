@@ -1,16 +1,19 @@
-export const App = () => {
+import React from 'react';
+import Profile from './Profile/Profile';
+import userData from '../data/user.json';
+
+function App() {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      <h1>test</h1>
+    <div className="App">
+      <Profile
+        username={userData.username}
+        tag={userData.tag}
+        location={userData.location}
+        avatar={userData.avatar}
+        stats={userData.stats}
+      />
     </div>
   );
-};
+}
+
+export default App;
