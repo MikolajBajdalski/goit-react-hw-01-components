@@ -8,8 +8,8 @@ function Statistics({ stats }) {
             <h2 className={styles.title}>UPLOAD STATS</h2>
 
             <ul className={styles.statList}>
-                {stats.map((item, index) => (
-                    <li key={index} className={styles.item} style={{ backgroundColor: getRandomColor() }}>
+                {stats.map(item => (
+                    <li key={item.id} className={styles.item} style={{ backgroundColor: getRandomColor() }}>
                         <span className={styles.label}>{item.label}</span>
                         <span className={styles.percentage}>{item.percentage + '%'}</span>
                     </li>
@@ -28,12 +28,12 @@ function getRandomColor() {
     return color;
 }
 
-
 Statistics.propTypes = {
     stats: PropTypes.arrayOf(
         PropTypes.shape({
+            id: PropTypes.string.isRequired,
             label: PropTypes.string.isRequired,
-            percentage: PropTypes.string.isRequired,
+            percentage: PropTypes.number.isRequired,
         })
     ).isRequired,
 };

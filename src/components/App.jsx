@@ -2,8 +2,10 @@ import React from 'react';
 import '../index.css'
 import Profile from './Profile/Profile';
 import Statistics from './Statistics/Statistics'
+import FriendList from './FriendList/FriendList';
 import userData from '../data/user.json';
 import statsData from '../data/data.json';
+import friendsData from '../data/friends.json'
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
       />
       <Statistics stats={statsData}
       />
+      <div>
+        <FriendList friends={friendsData} />
+      </div>
     </div>
   );
 }
