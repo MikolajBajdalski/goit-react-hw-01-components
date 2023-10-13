@@ -3,9 +3,11 @@ import '../index.css'
 import Profile from './Profile/Profile';
 import Statistics from './Statistics/Statistics'
 import FriendList from './FriendList/FriendList';
+import TransactionHistory from './TransactionHistory/TransactionHistory'
 import userData from '../data/user.json';
 import statsData from '../data/data.json';
 import friendsData from '../data/friends.json'
+import transactions from '../data/transactions.json'
 
 function App() {
   return (
@@ -19,9 +21,7 @@ function App() {
       />
       <Statistics stats={statsData}
       />
-      <div>
-        <FriendList friends={friendsData} />
-      </div>
+      <FriendList friends={friendsData} />
     </div>
   );
 }
